@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO App</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body onload="initialize()"> 
+    <section>
+      <div class="container center">
+        <h1 class="center title" style="color: #008080; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Taskqueue App</h1>
+        <div class="flow-right controls">
+          <span>Item count: <span id="item-count">0</span></span>
+          <span>Unchecked count: <span id="unchecked-count">0</span></span>
+        </div>
+        <button class="button center" onclick="newTodo()" style="background-color: #008080; color: white;">New TODO</button>
+        <table class="todo-table">
+          <!--
+            <tr id="todo-head" class="todo-head">
+                <th>id</th>
+                <th>status</th>
+                <th class="todo-subject">Todo</th>
+                <th>Action</th>
+            </tr>
+            -->
+          <tbody id="todo-list" class="todo-list" style="overflow-y: visible;">
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="addNewTodoArea" class="modal" style="display: none;">
+      <div class="todo-container">
+        
+        <input id="newTodoName" class="new-todo" type="text" autocomplete="off" placeholder="name / subject " maxlength="100">
+        <textarea id="todoDescription" placeholder="Description"></textarea>
+        <div class="final-actions">
+          <button class="button done-button" onclick="saveTodo()">OK</button>
+          <button class="button cancel-button" onclick="toggleNewTodo()">close</button>
+        </div>
+      </div>
+    </section>
+    <section id="todoDescri-area" class="modal" style="display: none;">
+      <div class="todo-container2">
+        <div id="descriSub"></div>
+        <div id="descriDetail"></div>
+        <div>
+          <button class="button cancel-button" onclick="toggleDecri()">close</button>
+        </div>      
+      </div>
+    </section>
+  </body>
+  <script src="./script.js"></script>
+  
+</html>
